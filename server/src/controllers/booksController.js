@@ -9,7 +9,7 @@ const booksController = {
 
     createBook: asyncErrorHandler(async (req, res) => {
         const book = await booksService.createBook(req.body);
-        res.sendSuccess(book, 201);
+        res.sendSuccess(book, 200);
     }),
 
     getBookById: asyncErrorHandler(async (req, res) => {
@@ -27,7 +27,7 @@ const booksController = {
 
     deleteBook: asyncErrorHandler(async (req, res) => {
         await booksService.deleteBook(req.params.id);
-        res.sendSuccess(true, 204);
+        res.sendSuccess(true, 200);
     }),
 };
 
